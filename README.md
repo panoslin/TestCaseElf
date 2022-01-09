@@ -6,6 +6,7 @@ Tese cases generating helper tool
 
 1. Specific the range of each field and output the product of the test case in a key-value fashion
 2. Ability to chain each combination (In a pipe)
+2. Out put the test cases in different format such as JSON/pandas.DataFrame/CSV
 
 ## 2. Expected Behavior
 
