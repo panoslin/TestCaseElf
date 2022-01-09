@@ -47,3 +47,9 @@ Tese cases generating helper tool
 ]
 ```
 
+### 3. TODO
+
+1. [Unit testing](https://mp.weixin.qq.com/s/zYpEXK6YTkZ5C6uU2kkexQ) for TestCaseElf🤣
+2. Documentation
+3. CI/CD in GitHub Action
+
