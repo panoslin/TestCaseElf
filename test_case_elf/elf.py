@@ -19,6 +19,20 @@ SelfField = TypeVar("SelfField", bound="Field")
 
 
 class Field:
+    """
+    Defining __add__ and __mul__ methods
+    so that it can chain with other objects like:
+
+        List[Dict] + field_instance
+        List[Dict] * field_instance
+
+    Defining __radd__ and __rmul__ methods
+    so that it can chain with other objects like (in reverse order):
+
+        field_instance + List[Dict]
+        field_instance * List[Dict]
+
+    """
 
     def __init__(self, **kwargs):
         self.field: Optional[dict] = kwargs

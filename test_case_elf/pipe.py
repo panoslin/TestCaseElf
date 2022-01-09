@@ -12,10 +12,19 @@ import pandas as pd
 from pathlib import Path
 from typing import (
     Union,
+    Iterable
 )
 
 
 class Pipe(object):
+    """
+    Defining  __ror__ method
+    so that it can chain with other objects like:
+
+    Iterable | pipe_instance
+
+    """
+
     def __init__(self, func):
         self.func = func
 
@@ -27,28 +36,30 @@ class Pipe(object):
 
 
 @Pipe
-def to_json(iterable):
+def to_json(iterable: Iterable):
     return json.dumps(iterable)
 
 
 @Pipe
-def to_df(iterable):
+def to_df(iterable: Iterable):
     return pd.DataFrame(iterable)
 
 
 @Pipe
-def to_csv(iterable, path: Union[str, Path], **kwargs):
+def to_csv(iterable: Iterable, path: Union[str, Path], **kwargs):
     return pd.DataFrame(iterable).to_csv(path, index=False, **kwargs)
+
 
 if __name__ == '__main__':
     from pprint import pprint
+
     pprint(
         (
-            [
-                {'a': 1, 'b': 2},
-                {'c': 1, 'd': 2},
-                {'e': 1, 'f': 2},
-            ]
-            | to_csv('test.csv')
+                [
+                    {'a': 1, 'b': 2},
+                    {'c': 1, 'd': 2},
+                    {'e': 1, 'f': 2},
+                ]
+                | to_csv('test.csv')
         )
     )
