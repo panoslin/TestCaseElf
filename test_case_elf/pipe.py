@@ -2,10 +2,6 @@
 # -*- coding: utf-8 -*-
 # Created by panos on 2022/1/9
 # IDE: PyCharm
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Created by panos on 2022/1/7
-# IDE: PyCharm
 import json
 import pandas as pd
 # typing
